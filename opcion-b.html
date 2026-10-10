@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cirujano de Columna</title>
+<meta name="description" content="Opción B, moderna. Propuesta de diseño para el sitio web de un cirujano de columna, por Simplify.AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f4f7f8;
+  --bg-tint:#e9f3f3;
+  --ink:#0d1f29;
+  --ink-2:#3b505d;
+  --ink-3:#6c7f8a;
+  --line:#e1e8eb;
+  --accent:#0d7a80;
+  --accent-2:#095c61;
+  --accent-soft:#d6eded;
+  --wa:#25d366;
+  --r:22px;
+  --shadow:0 1px 2px rgba(13,31,41,.04),0 16px 40px -18px rgba(13,31,41,.18);
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ribbon */
+.ribbon{background:#0a0806;color:#f3ede0;font-size:12.5px;text-align:center;padding:8px 44px;position:relative}
+.ribbon b{color:#e8b96a;font-weight:600}
+.ribbon button{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:#f3ede0;opacity:.6;font-size:18px;cursor:pointer}
+@media (max-width:600px){.ribbon{font-size:11.5px;padding:7px 36px}.ribbon .long{display:none}}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.84);backdrop-filter:saturate(1.5) blur(16px);-webkit-backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.mono{width:40px;height:40px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:17px;flex:none}
+.brand-name{font-family:var(--serif);font-size:20px;line-height:1.1}
+.brand-sub{font-size:13px;color:var(--ink-3)}
+.links{display:flex;gap:4px;font-size:14.5px;color:var(--ink-2);background:var(--bg-soft);padding:5px;border-radius:999px}
+.links a{padding:7px 14px;border-radius:999px;transition:background .2s,color .2s}
+.links a:hover,.links a.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(13,31,41,.08)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;font-size:12.5px;font-weight:600}
+.lang button{border:0;background:none;padding:5px 10px;border-radius:999px;cursor:pointer;color:var(--ink-3)}
+.lang button.on{background:var(--ink);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:13px 22px;font-weight:600;font-size:15px;transition:transform .15s ease,background .2s,box-shadow .25s;cursor:pointer;border:0;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px -12px rgba(13,122,128,.7)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink-3)}
+.btn svg{width:18px;height:18px}
+.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--ink)}
+@media (max-width:1020px){.links{display:none}.nav-r .btn{display:none}.menu-btn{display:block}}
+@media (max-width:420px){.brand-name{font-size:18px}}
+.mobile-menu{display:none;border-top:1px solid var(--line);padding:8px 16px 20px;background:#fff}
+.mobile-menu.open{display:grid}
+.mobile-menu a{padding:14px 4px;border-bottom:1px solid var(--line);font-weight:500}
+
+/* spine progress (desktop) */
+.sprog{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;gap:4px}
+.sprog i{display:block;height:5px;border-radius:3px;background:#d5e0e3;transition:background .3s}
+.sprog i.on{background:var(--accent)}
+.sprog span{font-size:11px;font-weight:600;color:var(--ink-3);margin-top:8px}
+@media (max-width:1320px){.sprog{display:none}}
+
+/* hero bento */
+.hero{padding:28px 0 0}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.tile{border-radius:var(--r);border:1px solid var(--line);background:#fff;position:relative;overflow:hidden}
+.t-main{grid-column:span 7;grid-row:span 2;padding:56px 52px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:
+  radial-gradient(900px 400px at -10% -20%,var(--bg-tint),transparent 60%),#fff}
+.t-spine{grid-column:span 5;grid-row:span 4;background:linear-gradient(180deg,#f2f8f8,#e6f1f2);display:flex;flex-direction:column;gap:14px;padding:24px 24px 20px}
+#heroSpine{flex:1;position:relative;min-height:440px}
+#heroSpine svg{position:absolute;inset:0;width:100%!important;height:100%!important}
+.zlist{display:grid;border-top:1px solid rgba(13,122,128,.18);padding-top:10px}
+.zlist div{display:flex;justify-content:space-between;font-size:14px;color:var(--ink-3);padding:5px 0;transition:color .3s}
+.zlist div.on{color:var(--accent-2);font-weight:600}
+.t-photo{grid-column:span 4;min-height:220px;background:url(img/hero.jpg) center/cover}
+.t-photo .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 14px;background:linear-gradient(transparent,rgba(13,31,41,.6));color:#fff;font-size:14px;font-weight:500}
+.t-stat{grid-column:span 3;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.t-stat .n{font-family:var(--serif);font-size:60px;line-height:1;letter-spacing:-.02em}
+.t-stat .n em{font-size:30px;color:var(--accent)}
+.t-stat p{font-size:14px;color:var(--ink-2)}
+.t-wa{grid-column:span 7;padding:22px 24px;display:flex;align-items:center;gap:18px;background:var(--ink);color:#fff;border-color:var(--ink)}
+.t-wa .av{width:48px;height:48px;border-radius:50%;background:var(--wa);display:grid;place-items:center;flex:none}
+.t-wa .av svg{width:26px;height:26px}
+.t-wa .msg{flex:1;min-width:0}
+.t-wa .msg b{display:block;font-weight:600}
+.t-wa .msg span{font-size:14px;color:rgba(255,255,255,.65)}
+.t-wa .btn{background:#fff;color:var(--ink)}
+.eyebrow{font-size:14px;font-weight:600;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,5.4vw,76px);line-height:1;letter-spacing:-.025em;margin:16px 0 22px}
+h1 em{color:var(--accent)}
+.lead{font-size:18px;color:var(--ink-2);max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:980px){
+  .t-main{grid-column:span 12;padding:40px 32px}
+  .t-spine{grid-column:span 12;grid-row:auto}
+  .t-photo{grid-column:span 6}
+  .t-stat{grid-column:span 6}
+  .t-wa{grid-column:span 12}
+}
+@media (max-width:600px){
+  .t-main{padding:32px 22px;gap:28px}
+  .lead{font-size:16.5px}
+  #heroSpine{min-height:360px}
+  .t-photo,.t-stat{grid-column:span 12}
+  .t-wa{flex-wrap:wrap}
+  .t-wa .btn{width:100%}
+  .hero-cta .btn{flex:1 1 auto}
+}
+
+/* marquee */
+.marq{margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0}
+.marq-in{display:flex;width:max-content;animation:marq 40s linear infinite}
+.marq span{font-family:var(--serif);font-size:24px;color:var(--ink-2);white-space:nowrap;padding:0 34px;border-right:1px solid var(--line)}
+.marq span:nth-child(even){font-style:italic;color:var(--accent)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:112px 0}
+@media (max-width:700px){section{padding:76px 0}}
+.sec-head{max-width:680px;margin-bottom:52px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.02em;margin-top:12px}
+h2 em{color:var(--accent)}
+.sec-head p{color:var(--ink-2);margin-top:16px;font-size:17px}
+.soft{background:var(--bg-soft)}
+
+/* about */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:center}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:40px}}
+.portrait{aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,var(--bg-tint),#fff 70%);border:1.5px dashed #b6cdd0;display:grid;place-items:center;text-align:center;color:var(--ink-3);position:relative;overflow:hidden}
+.portrait .ph{display:grid;gap:8px;justify-items:center;padding:24px;font-size:14px}
+.portrait .ph svg{width:44px;height:44px;color:#98b6ba}
+.portrait .tag{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow);text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.portrait .tag b{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink)}
+.portrait .tag span{font-size:13px}
+.portrait .tag .mn{font-size:12px;font-weight:600;color:var(--accent-2);white-space:nowrap}
+.about-text>p{color:var(--ink-2);font-size:17px;margin-top:16px}
+.tl{margin-top:34px;display:grid}
+.tl>div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.tl>div:last-child{border-bottom:1px solid var(--line)}
+.tl b{display:block;font-weight:600}
+.tl span span{color:var(--ink-3);font-size:14.5px}
+.tl .yr{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--accent)}
+
+/* explorer */
+.explorer{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start}
+@media (max-width:900px){.explorer{grid-template-columns:1fr}}
+.ex-spine{position:sticky;top:96px;border-radius:28px;background:#fff;border:1px solid var(--line);padding:22px;display:grid;gap:16px}
+@media (max-width:900px){.ex-spine{position:relative;top:0}}
+.zones{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--bg-soft);padding:4px;border-radius:14px}
+.zones button{border:0;background:none;padding:9px 4px;border-radius:10px;font-size:13.5px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:background .2s,color .2s}
+.zones button.on{background:#fff;color:var(--accent-2);box-shadow:0 1px 3px rgba(13,31,41,.1)}
+.ex-svg{height:440px;display:flex;justify-content:center;background:linear-gradient(180deg,#f5fafa,#edf5f6);border-radius:18px}
+@media (max-width:900px){.ex-svg{height:300px}}
+.ex-note{font-size:13px;color:var(--ink-3);text-align:center}
+.plist{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:620px){.plist{grid-template-columns:1fr}}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;transition:transform .3s ease,box-shadow .3s,opacity .3s,border-color .3s}
+.pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:transparent}
+.pcard.dim{opacity:.28}
+.ill{width:56px;height:56px;border-radius:14px;background:var(--bg-tint);color:var(--accent);display:grid;place-items:center}
+.ill svg{width:40px;height:40px}
+.ill .f{fill:var(--accent-soft)}
+.ill .a{stroke:#c56a48}
+.pcard .z{font-size:13px;color:var(--ink-3)}
+.pcard h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15;margin-top:2px}
+.pcard p{color:var(--ink-2);font-size:15px;margin-top:6px}
+.proc{margin-top:28px;padding:32px;border-radius:24px;background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 2fr;gap:28px;align-items:center}
+@media (max-width:820px){.proc{grid-template-columns:1fr;padding:26px}}
+.proc h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.15}
+.proc p{color:rgba(255,255,255,.65);font-size:15px;margin-top:6px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 15px;font-size:14px}
+
+/* hospitals */
+.hosp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.hosp{grid-template-columns:1fr}}
+.h-card{border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column}
+.h-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.h-img{aspect-ratio:16/10;background:url(img/hospital.jpg) center/cover;transition:transform .6s ease}
+.h-card:hover .h-img{transform:scale(1.04)}
+.h-img.a{background-position:20% center}.h-img.b{background-position:80% center}
+.h-body{padding:22px 24px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;background:#fff;position:relative}
+.h-body h3{font-family:var(--serif);font-weight:500;font-size:23px}
+.h-body p{color:var(--ink-3);font-size:14px;margin-top:2px}
+.h-body .go{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:background .2s,color .2s}
+.h-card:hover .go{background:var(--accent);color:#fff;border-color:var(--accent)}
+.h-body .go svg{width:16px;height:16px}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:24px}}
+.faq-side{position:sticky;top:110px}
+@media (max-width:900px){.faq-side{position:relative;top:0}}
+.faq-side .ask{margin-top:28px;padding:22px;border-radius:20px;background:#fff;border:1px solid var(--line);display:grid;gap:14px}
+.faq-side .ask p{font-size:15px;color:var(--ink-2)}
+.qa{background:#fff;border:1px solid var(--line);border-radius:18px;margin-bottom:10px;transition:border-color .2s,box-shadow .2s}
+.qa.open{border-color:transparent;box-shadow:var(--shadow)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;padding:22px 24px;font-size:17px;font-weight:600;color:var(--ink);cursor:pointer}
+.qa .pm{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bg-soft);display:grid;place-items:center;transition:transform .3s ease,background .2s,color .2s}
+.qa .pm svg{width:13px;height:13px}
+.qa.open .pm{transform:rotate(45deg);background:var(--accent);color:#fff}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{color:var(--ink-2);padding:0 24px 22px;font-size:15.5px}
+
+/* office bento */
+.office{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.o-photo{grid-column:span 5;border-radius:24px;min-height:300px;background:linear-gradient(160deg,var(--bg-tint),#fff 75%);border:1.5px dashed #b6cdd0;display:grid;place-items:center;text-align:center;color:var(--ink-3);font-size:14px;padding:24px}
+.o-photo svg{width:40px;height:40px;color:#98b6ba;margin:0 auto 10px}
+.o-map{grid-column:span 7;grid-row:span 2;border-radius:24px;overflow:hidden;min-height:520px;border:1px solid var(--line);position:relative;background:
+  repeating-linear-gradient(0deg,transparent 0 46px,#e3ecee 46px 48px),repeating-linear-gradient(90deg,transparent 0 46px,#e3ecee 46px 48px),var(--bg-soft)}
+.o-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.03)}
+.o-map .pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);color:var(--accent)}
+.o-map .pin svg{width:44px;height:44px}
+.o-map .card{position:absolute;left:16px;bottom:16px;right:16px;max-width:360px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:2}
+.o-map .card b{display:block}
+.o-map .card span{font-size:13.5px;color:var(--ink-3)}
+.o-info{grid-column:span 5;border-radius:24px;border:1px solid var(--line);padding:26px;display:grid;gap:18px;align-content:start;background:#fff}
+.row{display:flex;gap:14px}
+.row .ri{width:38px;height:38px;border-radius:11px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.row .ri svg{width:19px;height:19px}
+.row b{display:block;font-weight:600;font-size:15px}
+.row span{color:var(--ink-2);font-size:14.5px}
+@media (max-width:900px){.o-photo,.o-map,.o-info{grid-column:span 12}.o-map{grid-row:auto;min-height:380px}}
+
+/* band */
+.band{background:var(--ink);color:#fff;border-radius:32px;padding:64px 56px;display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:32px;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;right:-120px;top:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(13,122,128,.5),transparent 65%)}
+.band h2{color:#fff;margin:0;position:relative}
+.band h2 em{color:#7fd6d0}
+.band .r{position:relative;display:grid;gap:12px;justify-items:start}
+.band .r p{color:rgba(255,255,255,.65);font-size:15px}
+.band .btn{background:var(--wa);color:#08341d}
+@media (max-width:820px){.band{grid-template-columns:1fr;padding:40px 26px}}
+
+/* footer */
+footer{padding:72px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot p{color:var(--ink-3);font-size:14px;margin-top:12px}
+.social{display:flex;gap:10px}
+.social a{width:44px;height:44px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-2);transition:background .2s,color .2s,border-color .2s}
+.social a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.social svg{width:18px;height:18px}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3)}
+.legal a b{color:var(--ink);font-weight:700}
+
+/* whatsapp float */
+.wa{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px}
+.wa-bubble{background:#fff;border-radius:16px 16px 4px 16px;padding:11px 15px;font-size:14px;box-shadow:var(--shadow);border:1px solid var(--line);opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s;pointer-events:none}
+.wa:hover .wa-bubble,.wa.hint .wa-bubble{opacity:1;transform:none}
+.wa-btn{width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;box-shadow:0 12px 26px -10px rgba(13,31,41,.45);transition:transform .2s}
+.wa-btn:hover{transform:scale(1.07)}
+.wa-btn svg{width:30px;height:30px}
+@media (max-width:600px){.wa{right:16px;bottom:16px}.wa-bubble{display:none}}
+
+/* spine svg */
+.spine-svg .v{fill:#fff;stroke:#b7cbcf;stroke-width:1.2;transition:fill .35s,stroke .35s}
+.spine-svg .v.hl{fill:var(--accent);stroke:var(--accent-2)}
+.spine-svg .d{fill:#cfe2e4;transition:fill .35s}
+.spine-svg .d.hl{fill:#8fd0cb}
+.spine-svg .pr{stroke:#c7d8db;stroke-width:1.2;fill:none;transition:stroke .35s}
+.spine-svg .pr.hl{stroke:var(--accent)}
+.spine-svg .cord{stroke:#bcd6d8;stroke-width:1.5;fill:none}
+.spine-svg .lbl{font-family:var(--sans);font-size:10px;font-weight:600;fill:var(--ink-3)}
+.spine-svg .lbl.hl{fill:var(--accent-2)}
+.spine-svg .tick{stroke:#c7d8db;stroke-width:1}
+.spine-svg.build .v,.spine-svg.build .d{opacity:0;animation:vin .5s ease forwards}
+@keyframes vin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.ex-svg .spine-svg g{cursor:pointer}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marq-in{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Opción B · moderna · <b>Simplify.AI</b><span class="long"> · Textos, fotos y datos de muestra</span> · <a href="opcion-a.html" style="color:#e8b96a;text-decoration:underline;text-underline-offset:3px">Ver opción A</a><button aria-label="Cerrar" onclick="this.parentNode.remove()">×</button></div>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#inicio" class="brand">
+      <div class="mono">NA</div>
+      <div><div class="brand-name">Dr. Nombre Apellido</div><div class="brand-sub" data-en="Spine surgeon">Cirujano de columna</div></div>
+    </a>
+    <nav class="links">
+      <a href="#especialidad" data-en="About">Especialidad</a>
+      <a href="#patologias" data-en="Conditions">Patologías</a>
+      <a href="#hospitales" data-en="Hospitals">Hospitales</a>
+      <a href="#preguntas" data-en="FAQ">Preguntas</a>
+      <a href="#consultorio" data-en="Office">Consultorio</a>
+    </nav>
+    <div class="nav-r">
+      <div class="lang" role="group" aria-label="Idioma"><button class="on" data-lang="es">ES</button><button data-lang="en">EN</button></div>
+      <a class="btn btn-primary" href="#" data-wa><span data-en="Book a visit">Pedir turno</span></a>
+      <button class="menu-btn" aria-label="Menú" onclick="document.getElementById('mm').classList.toggle('open')">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="#especialidad" data-en="About">Especialidad</a><a href="#patologias" data-en="Conditions">Patologías</a><a href="#hospitales" data-en="Hospitals">Hospitales</a><a href="#preguntas" data-en="FAQ">Preguntas frecuentes</a><a href="#consultorio" data-en="Office">Consultorio</a>
+  </div>
+</header>
+
+<div class="sprog" id="sprog" aria-hidden="true"></div>
+
+<!-- 1. BANNER -->
+<section class="hero" id="inicio" style="padding-bottom:0">
+  <div class="wrap bento">
+    <div class="tile t-main rv">
+      <div>
+        <span class="eyebrow" data-en="Spine surgeon · M.N. 000000">Cirujano de columna · M.N. 000000</span>
+        <h1 data-en="Your spine, <em>in expert hands.</em>">Tu columna, <em>en manos expertas.</em></h1>
+        <p class="lead" data-en="Diagnosis and surgical treatment of cervical, thoracic and lumbar spine conditions, with minimally invasive techniques and follow-up at every stage.">Diagnóstico y tratamiento quirúrgico de patologías de columna cervical, dorsal y lumbar, con técnicas mínimamente invasivas y seguimiento en cada etapa.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#" data-wa>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+          <span data-en="Book via WhatsApp">Turnos por WhatsApp</span>
+        </a>
+        <a class="btn btn-ghost" href="#patologias" data-en="Where does it hurt?">¿Dónde te duele?</a>
+      </div>
+    </div>
+
+    <div class="tile t-spine rv">
+      <div id="heroSpine"></div>
+      <div class="zlist" id="zlist">
+        <div data-z="c"><span>Cervical</span><span>C1 a C7</span></div>
+        <div data-z="t"><span data-en="Thoracic">Dorsal</span><span>T1 a T12</span></div>
+        <div data-z="l"><span>Lumbar</span><span>L1 a L5</span></div>
+      </div>
+    </div>
+
+    <div class="tile t-photo rv"><div class="cap" data-en="Operating rooms equipped for spine surgery">Quirófanos equipados para cirugía de columna</div></div>
+    <div class="tile t-stat rv">
+      <div class="n">15<em>+</em></div>
+      <p data-en="years operating on the spine">años operando columna</p>
+    </div>
+
+    <div class="tile t-wa rv">
+      <div class="av"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></div>
+      <div class="msg"><b data-en="Appointments via WhatsApp">Turnos por WhatsApp</b><span data-en="Monday to Friday. We confirm availability and insurance.">Lunes a viernes. Te confirmamos disponibilidad y cobertura.</span></div>
+      <a class="btn" href="#" data-wa data-en="Message us">Escribir</a>
+    </div>
+  </div>
+
+  <div class="marq" aria-hidden="true">
+    <div class="marq-in">
+      <span>Microdiscectomía</span><span data-en="Endoscopic surgery">Cirugía endoscópica</span><span data-en="Spinal fusion">Artrodesis</span><span data-en="Kyphoplasty">Cifoplastia</span><span data-en="Decompression">Descompresión</span><span data-en="Deformity correction">Corrección de deformidades</span>
+      <span>Microdiscectomía</span><span data-en="Endoscopic surgery">Cirugía endoscópica</span><span data-en="Spinal fusion">Artrodesis</span><span data-en="Kyphoplasty">Cifoplastia</span><span data-en="Decompression">Descompresión</span><span data-en="Deformity correction">Corrección de deformidades</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ESPECIALIDAD -->
+<section id="especialidad">
+  <div class="wrap about">
+    <div class="portrait rv">
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        <span data-en="Portrait of the doctor">Foto del Dr.</span>
+      </div>
+      <div class="tag"><div><b>Dr. Nombre Apellido</b><span data-en="Spine surgeon">Cirujano de columna</span></div><span class="mn">M.N. 000000</span></div>
+    </div>
+    <div class="about-text rv">
+      <span class="eyebrow" data-en="Specialty">Especialidad</span>
+      <h2 data-en="A spine surgeon <em>with judgment</em> and no rush.">Cirujano de columna, <em>con criterio</em> y sin apuros.</h2>
+      <p data-en="Orthopedic surgeon dedicated exclusively to the spine. Many patients improve without surgery. When surgery is the right call, he favors minimally invasive techniques.">Traumatólogo con dedicación exclusiva a la columna vertebral. Muchos pacientes mejoran sin operarse. Cuando la cirugía es la indicación correcta, prioriza técnicas mínimamente invasivas.</p>
+      <div class="tl">
+        <div><span class="yr" data-en="Training">Formación</span><span><b data-en="Medicine, University">Medicina, Universidad</b><span data-en="Residency in Orthopedics and Traumatology">Residencia en Ortopedia y Traumatología</span></span></div>
+        <div><span class="yr" data-en="Fellowship">Posgrado</span><span><b data-en="Spine surgery fellowship">Fellowship en cirugía de columna</b><span data-en="Center, country">Centro, país</span></span></div>
+        <div><span class="yr" data-en="Today">Hoy</span><span><b data-en="Surgeon, speaker and teacher">Cirujano, disertante y docente</b><span data-en="National and international spine societies">Sociedades de columna nacionales e internacionales</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PATOLOGÍAS -->
+<section id="patologias" class="soft">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-en="Conditions treated">Patologías que atiende</span>
+      <h2 data-en="Pick the area <em>where it hurts.</em>">Elegí la zona <em>donde te duele.</em></h2>
+      <p data-en="Tap a region of the spine to see the most common conditions there.">Tocá una región de la columna para ver las afecciones más frecuentes de esa zona.</p>
+    </div>
+    <div class="explorer">
+      <div class="ex-spine rv">
+        <div class="zones" id="zones">
+          <button class="on" data-z="all" data-en="All">Todas</button>
+          <button data-z="c">Cervical</button>
+          <button data-z="t" data-en="Thoracic">Dorsal</button>
+          <button data-z="l">Lumbar</button>
+        </div>
+        <div class="ex-svg" id="exSpine"></div>
+        <div class="ex-note" data-en="You can also tap the vertebrae">También podés tocar las vértebras</div>
+      </div>
+      <div>
+        <div class="plist" id="plist">
+          <article class="pcard" data-z="l"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="7" y="5" width="22" height="10" rx="3"/><rect x="7" y="25" width="22" height="10" rx="3"/><rect class="f" x="9" y="16.5" width="18" height="7" rx="2.5"/><path class="a" d="M27 17c6 0 7 6 0 6.5"/></svg></div><div><div class="z">Lumbar</div><h3 data-en="Lumbar disc herniation">Hernia de disco lumbar</h3><p data-en="Low back pain and sciatica down the leg, tingling or weakness.">Dolor lumbar y ciática que baja a la pierna, hormigueo o pérdida de fuerza.</p></div></article>
+          <article class="pcard" data-z="c"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="9" y="6" width="17" height="8" rx="2.5"/><rect x="9" y="22" width="17" height="8" rx="2.5"/><rect class="f" x="10.5" y="15.5" width="14" height="5" rx="2"/><path class="a" d="M24.5 15.8c4 .2 4.5 4.2 0 4.6"/><path d="M28 19c3 2 4 6 3 12"/></svg></div><div><div class="z">Cervical</div><h3 data-en="Cervical disc herniation">Hernia de disco cervical</h3><p data-en="Neck pain radiating to the arm, numb hands and persistent stiffness.">Dolor de cuello que baja al brazo, manos adormecidas y contracturas que no ceden.</p></div></article>
+          <article class="pcard" data-z="l"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 4c0 10 6 12 6 16s-6 6-6 16"/><path d="M28 4c0 10-6 12-6 16s6 6 6 16"/><path class="a" d="M18.5 20h3" stroke-width="2.4"/></svg></div><div><div class="z">Lumbar</div><h3 data-en="Spinal stenosis">Estenosis de canal</h3><p data-en="Narrowing of the canal causing leg pain and fatigue when walking.">El canal se estrecha y aparecen dolor y cansancio en las piernas al caminar.</p></div></article>
+          <article class="pcard" data-z="l"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="4" y="6" width="22" height="11" rx="3"/><rect class="f" x="12" y="22" width="22" height="11" rx="3"/><path class="a" d="M27 11.5h7m-2.5-2.5 2.5 2.5-2.5 2.5"/></svg></div><div><div class="z">Lumbar</div><h3 data-en="Spondylolisthesis">Espondilolistesis</h3><p data-en="One vertebra slips over another, with back pain and instability.">Una vértebra se desplaza sobre otra, con dolor lumbar e inestabilidad.</p></div></article>
+          <article class="pcard" data-z="t l"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="14" y="3" width="10" height="5" rx="1.6"/><rect x="18" y="10" width="10" height="5" rx="1.6"/><rect class="f" x="20" y="17" width="10" height="5" rx="1.6"/><rect x="17" y="24" width="10" height="5" rx="1.6"/><rect x="12" y="31" width="10" height="5" rx="1.6"/><path class="a" d="M8 4v32" stroke-dasharray="2 3"/></svg></div><div><div class="z" data-en="Thoracic and lumbar">Dorsal y lumbar</div><h3 data-en="Scoliosis and deformities">Escoliosis y deformidades</h3><p data-en="Abnormal curvatures in teens and adults.">Curvaturas anormales de la columna en adolescentes y adultos.</p></div></article>
+          <article class="pcard" data-z="t l"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect class="f" x="7" y="7" width="26" height="26" rx="5"/><path class="a" d="M7 18l7 2-3 5 8 1-2 5 8-2" stroke-width="2"/></svg></div><div><div class="z" data-en="Thoracic and lumbar">Dorsal y lumbar</div><h3 data-en="Vertebral fractures">Fracturas vertebrales</h3><p data-en="Osteoporotic or traumatic, often treatable percutaneously.">Por osteoporosis o traumatismos, muchas veces tratables por vía percutánea.</p></div></article>
+          <article class="pcard" data-z="c"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3c0 9 3 12 3 17s-3 8-3 17"/><path d="M24 3c0 9-3 12-3 17s3 8 3 17"/><path class="a" d="M7 16l7 4-7 4M33 16l-7 4 7 4"/></svg></div><div><div class="z">Cervical</div><h3 data-en="Cervical myelopathy">Mielopatía cervical</h3><p data-en="Spinal cord compression in the neck: clumsy hands and gait problems.">Compresión de la médula en el cuello: torpeza en las manos y dificultad para caminar.</p></div></article>
+          <article class="pcard" data-z="c l"><div class="ill"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="7" y="6" width="26" height="9" rx="3"/><rect x="7" y="25" width="26" height="9" rx="3"/><rect class="f" x="10" y="18.5" width="20" height="3" rx="1.5"/><path class="a" d="M8 15l-3 4M32 15l3 4M8 25l-3-4M32 25l3-4"/></svg></div><div><div class="z" data-en="Cervical and lumbar">Cervical y lumbar</div><h3 data-en="Degenerative disc disease">Discopatía degenerativa</h3><p data-en="Disc wear linked to chronic back or neck pain.">Desgaste de los discos, asociado a dolor crónico de espalda o cuello.</p></div></article>
+        </div>
+        <div class="proc rv">
+          <div><h3 data-en="Procedures">Procedimientos</h3><p data-en="Chosen for each patient.">Elegidos según cada paciente.</p></div>
+          <div class="pills">
+            <span class="pill">Microdiscectomía</span><span class="pill" data-en="Endoscopic surgery">Cirugía endoscópica</span><span class="pill" data-en="Decompression">Descompresión</span><span class="pill" data-en="Spinal fusion">Artrodesis</span><span class="pill" data-en="Kyphoplasty and vertebroplasty">Cifoplastia y vertebroplastia</span><span class="pill" data-en="Nerve blocks and injections">Bloqueos e infiltraciones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. HOSPITALES -->
+<section id="hospitales">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-en="Where he operates">Dónde opera</span>
+      <h2 data-en="Hospitals and <em>operating rooms</em>">Hospitales y <em>quirófanos</em></h2>
+    </div>
+    <div class="hosp">
+      <a class="h-card rv" href="#"><div style="overflow:hidden"><div class="h-img"></div></div><div class="h-body"><div><h3>Hospital 1</h3><p>CABA</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a>
+      <a class="h-card rv" href="#"><div style="overflow:hidden"><div class="h-img a"></div></div><div class="h-body"><div><h3>Sanatorio 2</h3><p>CABA</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a>
+      <a class="h-card rv" href="#"><div style="overflow:hidden"><div class="h-img b"></div></div><div class="h-body"><div><h3>Clínica 3</h3><p data-en="Buenos Aires Province">Provincia de Buenos Aires</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PREGUNTAS FRECUENTES -->
+<section id="preguntas" class="soft">
+  <div class="wrap faq-grid">
+    <div class="faq-side rv">
+      <span class="eyebrow" data-en="FAQ">Preguntas frecuentes</span>
+      <h2 data-en="What patients <em>ask us most</em>">Lo que más <em>nos consultan</em></h2>
+      <div class="ask">
+        <p data-en="Have another question? Message us.">¿Tenés otra duda? Escribinos.</p>
+        <a class="btn btn-primary" href="#" data-wa data-en="Ask on WhatsApp">Consultar por WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <div class="qa open rv"><button><span data-en="When should I see a spine surgeon?">¿Cuándo conviene consultar a un cirujano de columna?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p data-en="When back or neck pain lasts more than a few weeks, radiates to the arms or legs, or comes with tingling or weakness. Seeing a surgeon does not mean having surgery.">Cuando el dolor de espalda o cuello dura más de algunas semanas, baja a brazos o piernas, o aparece hormigueo o pérdida de fuerza. Consultar a un cirujano no significa operarse.</p></div></div></div>
+      <div class="qa rv"><button><span data-en="Does every herniated disc need surgery?">¿Toda hernia de disco se opera?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p data-en="No. Most improve with medication, physiotherapy and follow-up. Surgery is recommended when pain persists or there is neurological involvement.">No. La mayoría mejora con medicación, kinesiología y control. Se opera cuando el dolor persiste o hay compromiso neurológico.</p></div></div></div>
+      <div class="qa rv"><button><span data-en="What should I bring to the first visit?">¿Qué llevo a la primera consulta?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p data-en="ID, insurance card and any previous imaging (MRI, X-rays, CT), ideally the images and not just the reports.">DNI, credencial de la obra social o prepaga y los estudios que tengas (resonancia, radiografías, tomografía), mejor con las imágenes y no solo los informes.</p></div></div></div>
+      <div class="qa rv"><button><span data-en="Do you accept health insurance?">¿Atiende por obra social o prepaga?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p data-en="Yes, the main plans, and also private patients. Message us with your coverage and we will confirm.">Sí, las principales, y también de forma particular. Escribinos con tu cobertura y te confirmamos.</p></div></div></div>
+      <div class="qa rv"><button><span data-en="How long is recovery?">¿Cuánto dura la recuperación?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p data-en="It depends on the procedure. With minimally invasive techniques many patients walk the same or next day.">Depende del procedimiento. Con técnicas mínimamente invasivas, muchos pacientes caminan el mismo día o al siguiente.</p></div></div></div>
+      <div class="qa rv"><button><span data-en="How do I book?">¿Cómo saco turno?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p data-en="Via WhatsApp with the green button, or by phone during office hours.">Por WhatsApp, con el botón verde, o por teléfono en el horario del consultorio.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CONSULTORIO + MAPA -->
+<section id="consultorio">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-en="Office">Consultorio</span>
+      <h2 data-en="See you <em>at the office</em>">Te esperamos <em>en el consultorio</em></h2>
+    </div>
+    <div class="office">
+      <div class="o-map rv">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5" fill="#fff"/></svg></div>
+        <iframe title="Mapa del consultorio" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Buenos%20Aires%2C%20Argentina&z=13&output=embed"></iframe>
+        <div class="card"><div><b data-en="Spine office">Consultorio de columna</b><span>Av. Ejemplo 0000, CABA</span></div><a class="btn btn-ghost" style="padding:10px 16px;font-size:14px" href="https://maps.google.com/?q=Buenos+Aires" target="_blank" rel="noopener" data-en="Directions">Cómo llegar</a></div>
+      </div>
+      <div class="o-photo rv"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.5"/></svg><span data-en="Photo of the office">Foto del consultorio</span></div></div>
+      <div class="o-info rv">
+        <div class="row"><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b data-en="Address">Dirección</b><span>Av. Ejemplo 0000, piso 0, CABA</span></div></div>
+        <div class="row"><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><b data-en="Hours">Horario</b><span data-en="Mon to Fri, 9am to 1pm and 4 to 8pm">Lunes a viernes, 9 a 13 y 16 a 20 h</span></div></div>
+        <div class="row"><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><div><b>Email</b><span>consultas@dominio.com.ar</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="band rv">
+    <h2 data-en="Back or neck pain? <em>Let's talk.</em>">¿Dolor de espalda o cuello? <em>Hablemos.</em></h2>
+    <div class="r">
+      <p data-en="We reply with availability and the insurance plans accepted.">Te respondemos con los días disponibles y las coberturas que atiende.</p>
+      <a class="btn" href="#" data-wa data-en="Book via WhatsApp">Turnos por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#inicio" class="brand"><div class="mono">NA</div><div><div class="brand-name">Dr. Nombre Apellido</div><div class="brand-sub"><span data-en="Spine surgeon">Cirujano de columna</span> · M.N. 000000</div></div></a>
+        <p>Av. Ejemplo 0000, CABA · consultas@dominio.com.ar</p>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8ZM9.8 15.1V8.9l5.7 3.1-5.7 3.1Z"/></svg></a>
+      </div>
+    </div>
+    <div class="legal">
+      <span data-en="© 2026 Dr. Nombre Apellido. This information does not replace a medical consultation.">© 2026 Dr. Nombre Apellido. Esta información no reemplaza la consulta médica.</span>
+      <a href="#"><span data-en="Site by">Sitio por</span> <b>SIMPLIFY.AI</b></a>
+    </div>
+    <p style="font-size:11px;color:#a3b2ba;margin-top:12px">Fotos de referencia: Wikimedia Commons, CC BY-SA 4.0.</p>
+  </div>
+</footer>
+
+<div class="wa" id="wa">
+  <div class="wa-bubble" data-en="Want to book a visit? Message us">¿Querés pedir un turno? Escribinos</div>
+  <a class="wa-btn" href="#" data-wa aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+  </a>
+</div>
+
+<script>
+// Número y mensajes del botón de WhatsApp (reemplazar por el real)
+const WA_NUMBER = '5491100000000';
+const WA_TEXT = { es: 'Hola, quisiera pedir un turno.', en: 'Hello, I would like to book an appointment.' };
+let lang = 'es';
+function setWa() {
+  document.querySelectorAll('[data-wa]').forEach(a => {
+    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_TEXT[lang]);
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+}
+setWa();
+
+// ES / EN
+document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
+  lang = b.dataset.lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang]').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (el.dataset.es === undefined) el.dataset.es = el.innerHTML;
+    el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.es;
+  });
+  setWa();
+}));
+
+// Columna SVG (C1–C7, T1–T12, L1–L5, sacro)
+const NS = 'http://www.w3.org/2000/svg';
+function buildSpine(host, {labels = false, interactive = false} = {}) {
+  const W = 200, H = 620, svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('class', 'spine-svg build');
+  svg.style.height = '100%'; svg.style.width = 'auto'; svg.style.maxWidth = '100%';
+  const segs = [];
+  for (let i = 1; i <= 7; i++) segs.push({z: 'c', n: 'C' + i, w: 34 + i * 2.2, h: 14});
+  for (let i = 1; i <= 12; i++) segs.push({z: 't', n: 'T' + i, w: 50 + i * 1.6, h: 17});
+  for (let i = 1; i <= 5; i++) segs.push({z: 'l', n: 'L' + i, w: 74 + i * 3, h: 22});
+  const gap = 4.2, total = segs.reduce((s, v) => s + v.h + gap, 0), y0 = (H - total - 70) / 2 + 8;
+  const curve = t => 104 + 24 * Math.sin(t * Math.PI * 2.1 + .3);
+  const cord = document.createElementNS(NS, 'path');
+  let y = y0, d = '';
+  segs.forEach((s, i) => {
+    const t = (y + s.h / 2 - y0) / total, cx = curve(t);
+    s.cx = cx; s.y = y;
+    d += (i ? 'L' : 'M') + (cx + s.w / 2 + 10) + ' ' + (y + s.h / 2);
+    y += s.h + gap;
+  });
+  cord.setAttribute('d', d); cord.setAttribute('class', 'cord');
+  segs.forEach((s, i) => {
+    const g = document.createElementNS(NS, 'g');
+    g.dataset.z = s.z;
+    if (i > 0) {
+      const disc = document.createElementNS(NS, 'rect');
+      disc.setAttribute('x', s.cx - s.w * .42); disc.setAttribute('y', s.y - gap + .6);
+      disc.setAttribute('width', s.w * .84); disc.setAttribute('height', gap - 1.2); disc.setAttribute('rx', 2);
+      disc.setAttribute('class', 'd'); disc.style.animationDelay = i * 35 + 'ms'; g.appendChild(disc);
+    }
+    const pr = document.createElementNS(NS, 'path');
+    pr.setAttribute('d', `M${s.cx + s.w / 2} ${s.y + s.h * .5} l${10 + s.w * .12} ${s.h * .25}`);
+    pr.setAttribute('class', 'pr'); g.appendChild(pr);
+    const r = document.createElementNS(NS, 'rect');
+    r.setAttribute('x', s.cx - s.w / 2); r.setAttribute('y', s.y); r.setAttribute('width', s.w); r.setAttribute('height', s.h);
+    r.setAttribute('rx', Math.min(7, s.h / 2.4)); r.setAttribute('class', 'v'); r.style.animationDelay = i * 35 + 'ms';
+    g.appendChild(r);
+    if (labels && ['C1', 'C7', 'T1', 'T12', 'L1', 'L5'].includes(s.n)) {
+      const tx = document.createElementNS(NS, 'text');
+      tx.setAttribute('x', 12); tx.setAttribute('y', s.y + s.h / 2 + 3.5); tx.setAttribute('class', 'lbl'); tx.textContent = s.n;
+      const tk = document.createElementNS(NS, 'line');
+      tk.setAttribute('x1', 34); tk.setAttribute('x2', s.cx - s.w / 2 - 6); tk.setAttribute('y1', s.y + s.h / 2); tk.setAttribute('y2', s.y + s.h / 2); tk.setAttribute('class', 'tick');
+      g.appendChild(tk); g.appendChild(tx);
+    }
+    if (interactive) g.addEventListener('click', () => selectZone(s.z));
+    svg.appendChild(g);
+  });
+  const last = segs[segs.length - 1], sy = last.y + last.h + gap, sc = last.cx - 4;
+  const sac = document.createElementNS(NS, 'path');
+  sac.setAttribute('d', `M${sc - 46} ${sy} Q${sc} ${sy - 4} ${sc + 46} ${sy} L${sc + 22} ${sy + 52} Q${sc} ${sy + 66} ${sc - 22} ${sy + 52} Z`);
+  sac.setAttribute('class', 'v'); sac.style.animationDelay = segs.length * 35 + 'ms';
+  svg.appendChild(sac);
+  svg.insertBefore(cord, svg.firstChild);
+  host.appendChild(svg);
+  setTimeout(() => svg.classList.remove('build'), segs.length * 35 + 600);
+  return svg;
+}
+function highlight(svg, z) {
+  svg.querySelectorAll('g').forEach(g => {
+    const on = z !== 'all' && g.dataset.z === z;
+    g.querySelectorAll('.v,.d,.pr,.lbl').forEach(el => el.classList.toggle('hl', on));
+  });
+}
+
+const heroSvg = buildSpine(document.getElementById('heroSpine'), {labels: true});
+const exSvg = buildSpine(document.getElementById('exSpine'), {labels: true, interactive: true});
+
+// Hero: recorre cervical, dorsal y lumbar
+const cycle = ['c', 't', 'l']; let ci = 0;
+function heroStep() {
+  const z = cycle[ci++ % cycle.length];
+  highlight(heroSvg, z);
+  document.querySelectorAll('#zlist div').forEach(d => d.classList.toggle('on', d.dataset.z === z));
+}
+heroStep(); setInterval(heroStep, 2200);
+
+function selectZone(z) {
+  document.querySelectorAll('#zones button').forEach(b => b.classList.toggle('on', b.dataset.z === z));
+  highlight(exSvg, z);
+  document.querySelectorAll('#plist .pcard').forEach(c => c.classList.toggle('dim', z !== 'all' && !c.dataset.z.split(' ').includes(z)));
+}
+document.querySelectorAll('#zones button').forEach(b => b.addEventListener('click', () => selectZone(b.dataset.z)));
+
+// Progreso de scroll con forma de columna
+const sprog = document.getElementById('sprog'), N = 24;
+for (let i = 0; i < N; i++) { const v = document.createElement('i'); v.style.width = (8 + i * .55) + 'px'; sprog.appendChild(v); }
+const lab = document.createElement('span'); sprog.appendChild(lab);
+const names = [...Array(7)].map((_, i) => 'C' + (i + 1)).concat([...Array(12)].map((_, i) => 'T' + (i + 1)), [...Array(5)].map((_, i) => 'L' + (i + 1)));
+function onScroll() {
+  document.getElementById('top').classList.toggle('scrolled', scrollY > 8);
+  const p = scrollY / (document.documentElement.scrollHeight - innerHeight || 1);
+  const k = Math.round(p * N);
+  [...sprog.querySelectorAll('i')].forEach((v, i) => v.classList.toggle('on', i < k));
+  lab.textContent = names[Math.max(0, Math.min(N - 1, k - 1))];
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => { if (s.getBoundingClientRect().top < 140) cur = s.id; });
+  document.querySelectorAll('.links a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+}
+addEventListener('scroll', onScroll, {passive: true}); onScroll();
+
+// FAQ, menú, aparición al hacer scroll, burbuja de WhatsApp
+document.querySelectorAll('.qa button').forEach(b => b.addEventListener('click', () => b.parentNode.classList.toggle('open')));
+document.querySelectorAll('#mm a').forEach(a => a.addEventListener('click', () => document.getElementById('mm').classList.remove('open')));
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold: .1});
+document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+setTimeout(() => { const w = document.getElementById('wa'); w.classList.add('hint'); setTimeout(() => w.classList.remove('hint'), 4000); }, 2500);
+</script>
+</body>
+</html>
