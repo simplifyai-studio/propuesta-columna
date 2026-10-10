@@ -30,9 +30,14 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 @media (max-width:600px){.wrap{padding:0 16px}}
 
-.ribbon{background:#0a0806;color:#f3ede0;font-size:12.5px;text-align:center;padding:8px 44px;position:relative}
-.ribbon b{color:#e8b96a;font-weight:600}
-.ribbon button{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:#f3ede0;opacity:.6;font-size:18px;cursor:pointer}
+.ribbon{background:#0a0806;color:#f3ede0;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 24px}
+.ribbon .rl{color:rgba(243,237,224,.65)}
+.ribbon .rl b{color:#e8b96a;font-weight:600}
+.ribbon .sw{display:flex;background:rgba(243,237,224,.08);border-radius:999px;padding:3px}
+.ribbon .sw a{padding:6px 14px;border-radius:999px;color:rgba(243,237,224,.72);font-weight:600;white-space:nowrap;transition:background .2s,color .2s}
+.ribbon .sw a:hover{color:#f3ede0}
+.ribbon .sw a.on{background:#e8b96a;color:#0a0806}
+@media (max-width:640px){.ribbon{justify-content:center;padding:7px 10px}.ribbon .rl{display:none}.ribbon .sw a{padding:6px 12px;font-size:12.5px}}
 
 header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
@@ -123,7 +128,7 @@ footer{padding:56px 0 36px;font-size:14px;color:var(--ink-3)}
 </head>
 <body>
 
-<div class="ribbon">Opción A · clásica · <b>Simplify.AI</b> · Textos, fotos y datos de muestra · <a href="opcion-b.html" style="color:#e8b96a;text-decoration:underline;text-underline-offset:3px">Ver opción B</a><button aria-label="Cerrar" onclick="this.parentNode.remove()">×</button></div>
+<div class="ribbon"><span class="rl">Propuesta de diseño de <b>Simplify.AI</b> · datos de muestra</span><nav class="sw" aria-label="Opciones de diseño"><a class="on">Opción A · Clásica</a><a href="opcion-b.html">Opción B · Moderna</a></nav></div>
 
 <header>
   <div class="wrap nav">
